@@ -45,7 +45,7 @@ try:
     if (ch.supportsRead()):
         print (ch.read())
         
-    ch = dev.getCharacteristics(uuid=UUID(0xfff4))
+    ch = dev.getCharacteristics(uuid=UUID(0xfff4))[1]
     if (ch.supportsRead()):
         print ('dev.getCharacteristics(uuid=UUID(0xfff4))')
         print (ch.read())
