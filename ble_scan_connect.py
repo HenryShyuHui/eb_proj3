@@ -44,11 +44,9 @@ try:
     ch = dev.getCharacteristics(uuid=UUID(0xfff4))[0]
     if (ch.supportsRead()):
         print (ch.read())
+        ch.write("fuck u BLE".encode("utf-8"))
         
-    ch = dev.getCharacteristics(uuid=UUID(0xfff4))[1]
-    if (ch.supportsRead()):
-        print ('dev.getCharacteristics(uuid=UUID(0xfff4))')
-        print (ch.read())
+
 #
 finally:
     dev.disconnect()
