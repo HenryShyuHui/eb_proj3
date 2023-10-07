@@ -62,6 +62,7 @@ try:
     ch = dev.getCharacteristics(uuid=UUID(0xfff4))[0]
     print(ch.propertiesToString())
     print(ch.getHandle())
+    print(hex(ch.getHandle()))
     # cccd = ch.getHandle() + 1
     # dev.writeCharacteristic(cccd, bytes([0x01, 0x00]))
     if (ch.supportsRead()):
@@ -73,7 +74,8 @@ try:
         # print (setValue)
         # print (writeCharacteristic)
     cccd_handle = ch.getHandle() + 1 
-    k = dev.writeCharacteristic(cccd_handle, b"\x00\x00")
+    print (hex(cccd_handle))
+    k = dev.writeCharacteristic(hex(cccd_handle), b"\x00\x00")
     print(ch.propertiesToString())
     print(k)
 
