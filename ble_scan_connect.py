@@ -40,6 +40,7 @@ try:
     ch = dev.getCharacteristics(uuid=UUID(0xfff1))[0]
     if (ch.supportsRead()):
         print (ch.read())
+        ch.write("fuck u BLE 0xfff1".encode("utf-8"))
 
     ch = dev.getCharacteristics(uuid=UUID(0xfff4))[0]
     # cccd = ch.getHandle() + 1
@@ -47,11 +48,11 @@ try:
     if (ch.supportsRead()):
         print (ch.read())
         ch.write("fuck u BLE".encode("utf-8"))
-        ch.setWriteType(WRITE_TYPE_DEFAULT)
-        setValue = ch.setValue(new byte[]{/*..BYTES.*/})
-        writeCharacteristic=dev.writeCharacteristic(ch)
-        print (setValue)
-        print (writeCharacteristic)
+        # ch.setWriteType(WRITE_TYPE_DEFAULT)
+        # setValue = ch.setValue(new byte[]{/*..BYTES.*/})
+        # writeCharacteristic=dev.writeCharacteristic(ch)
+        # print (setValue)
+        # print (writeCharacteristic)
         
         
         
