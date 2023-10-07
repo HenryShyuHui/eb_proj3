@@ -64,8 +64,12 @@ try:
         # print (setValue)
         # print (writeCharacteristic)
 
-    snd_content_str = """\\x00\\x00"""
-    dev.writeCharacteristic(0xfff4, snd_content_str)
+    ch = dev.getDescriptors(uuid=UUID(0xfff4))
+    print (len(ch))
+    for k in ch:
+        print(k)
+
+
     
         
         
