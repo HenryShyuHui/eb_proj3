@@ -74,7 +74,7 @@ try:
         print(k)
 
     
-    dev.writeCharacteristic(0xfff3, b"\x02\x00")
+    dev.writeCharacteristic(0xfff4, b"\x02\x00")
 
 
     
