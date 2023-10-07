@@ -73,7 +73,8 @@ try:
     for k in ch:
         print(k)
 
-    dev.writeCharacteristic(read_cccd, struct.pack('<bb', 0x01, 0x00))
+    
+    ch = dev.writeCharacteristic(ch.getHandle(), b"\x02\x00")
 
 
     
