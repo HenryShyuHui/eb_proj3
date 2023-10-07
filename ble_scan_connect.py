@@ -57,12 +57,14 @@ try:
     # dev.writeCharacteristic(cccd, bytes([0x01, 0x00]))
     if (ch.supportsRead()):
         print (ch.read())
-        ch.write("fuck u BLE 0xfff4".encode("utf-8"))
+        ch.write("fuck u BLE".encode("utf-8"))
         # ch.setWriteType(WRITE_TYPE_DEFAULT)
         # setValue = ch.setValue(new byte[]{/*..BYTES.*/})
         # writeCharacteristic=dev.writeCharacteristic(ch)
         # print (setValue)
         # print (writeCharacteristic)
+    
+    dev.WriteCharValue(uuid=UUID(0xfff4),"fuck",4)
         
         
         
