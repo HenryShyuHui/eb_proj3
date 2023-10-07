@@ -38,9 +38,9 @@ try:
         print (str(ch))
 #
     ch = dev.getCharacteristics(uuid=UUID(0xfff1))
-    if (ch.supportsRead()):
-        print (ch.read())
-        print (ch.len)
+    # if (ch.supportsRead()):
+    print (ch.read())
+    print (ch.len)
         
 
     ch = dev.getCharacteristics(uuid=UUID(0xfff2))[0]
