@@ -37,10 +37,9 @@ try:
     for ch in testService.getCharacteristics():
         print (str(ch))
 #
-    ch = dev.getCharacteristics(uuid=UUID(0xfff1))
-    # if (ch.supportsRead()):
-    #     print (ch.read())
-    print (len(ch))
+    ch = dev.getCharacteristics(uuid=UUID(0xfff1))[0]
+    if (ch.supportsRead()):
+        print (ch.read())
         
 
     ch = dev.getCharacteristics(uuid=UUID(0xfff2))[0]
@@ -65,9 +64,9 @@ try:
         # print (setValue)
         # print (writeCharacteristic)
 
-    testService = dev.getDescriptor(uuid=UUID(0xfff1))
-    for ch in testService.getDescriptor():
-        print(str(ch))
+    snd_content_str = """\\x01\\x00"""
+    dev.writeCharacteristic(0xfff4, snd_content_str)
+    
         
         
         
