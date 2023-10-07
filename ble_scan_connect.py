@@ -1,5 +1,5 @@
 # ble_scan_connect.py:
-from bluepy.btle import Peripheral, UUID
+from bluepy.btle import Peripheral, UUID, Characteristic
 from bluepy.btle import Scanner, DefaultDelegate
 class ScanDelegate(DefaultDelegate):
     def __init__(self):
@@ -38,6 +38,7 @@ try:
         print (str(ch))
 #
     ch = dev.getCharacteristics(uuid=UUID(0xfff1))[0]
+    print(ch.propertiesToString())
     if (ch.supportsRead()):
         print (ch.read())
         
@@ -48,11 +49,13 @@ try:
         ch.write("fuck u BLE 0xfff2".encode("utf-8"))
 
     ch = dev.getCharacteristics(uuid=UUID(0xfff3))[0]
+    print(ch.propertiesToString())
     if (ch.supportsRead()):
         print (ch.read())
         ch.write("fuck u BLE 0xfff3".encode("utf-8"))
 
     ch = dev.getCharacteristics(uuid=UUID(0xfff4))[0]
+    print(ch.propertiesToString())
     # cccd = ch.getHandle() + 1
     # dev.writeCharacteristic(cccd, bytes([0x01, 0x00]))
     if (ch.supportsRead()):
