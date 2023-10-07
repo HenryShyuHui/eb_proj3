@@ -72,6 +72,7 @@ try:
         # writeCharacteristic=dev.writeCharacteristic(ch)
         # print (setValue)
         # print (writeCharacteristic)
+    cccd_handle = ch.getHandle() + 1 
     k = dev.writeCharacteristic(cccd_handle, b"\x00\x00")
     print(ch.propertiesToString())
     print(k)
