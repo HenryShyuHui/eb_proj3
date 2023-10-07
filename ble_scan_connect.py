@@ -42,6 +42,16 @@ try:
         print (ch.read())
         ch.write("fuck u BLE 0xfff1".encode("utf-8"))
 
+    ch = dev.getCharacteristics(uuid=UUID(0xfff2))[0]
+    if (ch.supportsRead()):
+        print (ch.read())
+        ch.write("fuck u BLE 0xfff2".encode("utf-8"))
+
+    ch = dev.getCharacteristics(uuid=UUID(0xfff3))[0]
+    if (ch.supportsRead()):
+        print (ch.read())
+        ch.write("fuck u BLE 0xfff3".encode("utf-8"))
+
     ch = dev.getCharacteristics(uuid=UUID(0xfff4))[0]
     # cccd = ch.getHandle() + 1
     # dev.writeCharacteristic(cccd, bytes([0x01, 0x00]))
