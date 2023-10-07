@@ -63,8 +63,10 @@ try:
         # writeCharacteristic=dev.writeCharacteristic(ch)
         # print (setValue)
         # print (writeCharacteristic)
-    
-    dev.WriteCharValue(uuid=UUID(0xfff4),"fuck",4)
+
+    testService = dev.getDescriptor(uuid=UUID(0xfff1))
+    for ch in testService.getDescriptor():
+        print(str(ch))
         
         
         
