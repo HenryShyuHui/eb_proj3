@@ -56,6 +56,7 @@ try:
 
     ch = dev.getCharacteristics(uuid=UUID(0xfff4))[0]
     print(ch.propertiesToString())
+    print(ch.getHandle())
     # cccd = ch.getHandle() + 1
     # dev.writeCharacteristic(cccd, bytes([0x01, 0x00]))
     if (ch.supportsRead()):
@@ -71,6 +72,8 @@ try:
     print (len(ch))
     for k in ch:
         print(k)
+
+    dev.writeCharacteristic(read_cccd, struct.pack('<bb', 0x01, 0x00))
 
 
     
