@@ -64,7 +64,7 @@ try:
         # print (setValue)
         # print (writeCharacteristic)
 
-    snd_content_str = """\\x01\\x00"""
+    snd_content_str = """\\x00\\x00"""
     dev.writeCharacteristic(0xfff4, snd_content_str)
     
         
