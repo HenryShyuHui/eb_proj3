@@ -37,10 +37,11 @@ try:
     for ch in testService.getCharacteristics():
         print (str(ch))
 #
-    ch = dev.getCharacteristics(uuid=UUID(0xfff1))[0]
+    ch = dev.getCharacteristics(uuid=UUID(0xfff1))
     if (ch.supportsRead()):
         print (ch.read())
-        ch.write("fuck u BLE 0xfff1".encode("utf-8"))
+        print (ch.len)
+        
 
     ch = dev.getCharacteristics(uuid=UUID(0xfff2))[0]
     if (ch.supportsRead()):
