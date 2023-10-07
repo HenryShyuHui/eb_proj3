@@ -40,7 +40,7 @@ try:
     ch = dev.getCharacteristics(uuid=UUID(0xfff1))
     # if (ch.supportsRead()):
     #     print (ch.read())
-    print (ch.len)
+    print (len(ch))
         
 
     ch = dev.getCharacteristics(uuid=UUID(0xfff2))[0]
