@@ -44,9 +44,11 @@ try:
         
 
     ch = dev.getCharacteristics(uuid=UUID(0xfff2))[0]
+    print(ch.propertiesToString())
     cccd_uuid = 0x2902
     cccd_handle = ch.getHandle() + 1  # CCCD handle is the characteristic handle + 1
     dev.writeCharacteristic(cccd_handle, b"\x02\x00")
+    print(ch.propertiesToString())
     if (ch.supportsRead()):
         print (ch.read())
         ch.write("fuck u BLE 0xfff2".encode("utf-8"))
