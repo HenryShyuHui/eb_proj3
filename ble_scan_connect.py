@@ -72,7 +72,7 @@ try:
         # writeCharacteristic=dev.writeCharacteristic(ch)
         # print (setValue)
         # print (writeCharacteristic)
-    dev.writeCharacteristic(cccd_handle, b"\x00\x00",withResponse=True)
+    dev.writeCharacteristic(cccd_handle, b"\x00\x00",True)
     print(ch.propertiesToString())
 
     ch = testService.getDescriptors()
