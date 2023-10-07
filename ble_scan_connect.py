@@ -64,7 +64,7 @@ try:
         # print (setValue)
         # print (writeCharacteristic)
 
-    ch = dev.getDescriptors(uuid=UUID(0xfff4))
+    ch = testService.getDescriptors(startHnd=0xfff4, endHnd=0xfff4)
     print (len(ch))
     for k in ch:
         print(k)
