@@ -75,7 +75,7 @@ try:
         # print (writeCharacteristic)
     cccd_handle = ch.getHandle() + 1 
     print (hex(cccd_handle))
-    k = dev.writeCharacteristic(hex(cccd_handle), b"\x00\x00")
+    k = dev.writeCharacteristic(cccd_handle, b"\x00\x00")
     print(ch.propertiesToString())
     print(k)
 
@@ -85,8 +85,7 @@ try:
         print(k)
 
     
-    dev.writeCharacteristic(0xfff4, b"\x02\x00")
-
+    
 
     
         
