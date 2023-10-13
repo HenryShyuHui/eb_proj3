@@ -41,7 +41,7 @@ try:
     print(ch.propertiesToString())
     cccd_uuid = 0x2902
     cccd_handle = ch.getHandle() + 1  # CCCD handle is the characteristic handle + 1
-    dev.writeCharacteristic(cccd_handle, b"\x02\x00")
+    dev.writeCharacteristic(cccd_handle, b"\x01\x00")
     print(ch.propertiesToString())
     if (ch.supportsRead()):
         print (ch.read())
@@ -89,7 +89,7 @@ try:
     while True:
         if dev.waitForNotifications(1.0):
             # handleNotification() was called
-            print ("notify")
+            print ("notify, value is :")
             continue
         print("Waiting...")
         
