@@ -90,6 +90,7 @@ try:
     k = dev.writeCharacteristic(cccd_handle, b"\x01\x00")
     print(ch.propertiesToString())
     print(k)
+    dev.setDelegate(ScanDelegate())
 
 
     while True:
