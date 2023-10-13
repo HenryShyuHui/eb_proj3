@@ -81,10 +81,10 @@ try:
     print(ch.propertiesToString())
     print(k)
 
-    # ch = testService.getDescriptors()
-    # print (len(ch))
-    # for k in ch:
-    #     print(k)
+    ch_cccd = ch.getDescriptors(forUUID=0x2902)[0]
+    ch_cccd.write(b"\0x1\x00")
+
+
 
     while True:
         ch = dev.getCharacteristics(uuid=UUID(0xfff4))[0]
