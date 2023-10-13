@@ -9,6 +9,16 @@ class ScanDelegate(DefaultDelegate):
             print ("Discovered device", dev.addr)
         elif isNewData:
             print ("Received new data from", dev.addr)
+            
+//different module
+class MyDelegate(btle.DefaultDelegate):
+    def __init__(self):
+        btle.DefaultDelegate.__init__(self)
+
+    def handleNotification(self, cHandle, data):
+        print ("Notification received: handle =", cHandle, "; Raw data =", binascii.b2a_hex(data))
+
+
 scanner = Scanner().withDelegate(ScanDelegate())
 devices = scanner.scan(10.0)
 n=0
@@ -80,10 +90,6 @@ try:
     k = dev.writeCharacteristic(cccd_handle, b"\x01\x00")
     print(ch.propertiesToString())
     print(k)
-
-    ch_cccd = ch.getDescriptors(forUUID=0x2902)[0]
-    ch_cccd.write(b"\0x1\x00")
-
 
 
     while True:
