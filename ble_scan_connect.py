@@ -87,10 +87,12 @@ try:
     #     print(k)
 
     while True:
-        if dev.waitForNotifications(1.0):
-            # handleNotification() was called
-            print ("notify, value is :", ch.read())
-            continue
+        ch = dev.getCharacteristics(uuid=UUID(0xfff4))[0]
+        if (ch.supportsRead()):        
+            if dev.waitForNotifications(1.0):
+                # handleNotification() was called
+                print ("notify, value is :", ch.read())
+                continue
         print("Waiting...")
         
 
