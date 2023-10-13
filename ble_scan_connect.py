@@ -11,7 +11,7 @@ class ScanDelegate(DefaultDelegate):
             print ("Received new data from", dev.addr)
             
 # different module
-class MyDelegate(btle.DefaultDelegate):
+class MyDelegate(DefaultDelegate):
     def __init__(self):
         btle.DefaultDelegate.__init__(self)
 
