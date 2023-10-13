@@ -60,7 +60,6 @@ try:
     ch = dev.getCharacteristics(uuid=UUID(0xfff2))[0]
     if (ch.supportsRead()):
         print (ch.read())
-        ch.write("fuck u BLE 0xfff2".encode("utf-8"))
         
 
     ch = dev.getCharacteristics(uuid=UUID(0xfff3))[0]
@@ -69,7 +68,6 @@ try:
     print(ch.propertiesToString())
     if (ch.supportsRead()):
         print (ch.read())
-        ch.write("fuck u BLE 0xfff3".encode("utf-8"))
 
     ch = dev.getCharacteristics(uuid=UUID(0xfff4))[0]
     print(ch.propertiesToString())
@@ -79,7 +77,7 @@ try:
     # dev.writeCharacteristic(cccd, bytes([0x01, 0x00]))
     if (ch.supportsRead()):
         print (ch.read())
-        ch.write("fuck u BLE".encode("utf-8"))
+        ch.write("test".encode("utf-8"))
         # ch.setWriteType(WRITE_TYPE_DEFAULT)
         # setValue = ch.setValue(new byte[]{/*..BYTES.*/})
         # writeCharacteristic=dev.writeCharacteristic(ch)
@@ -98,7 +96,6 @@ try:
         if (ch.supportsRead()):        
             if dev.waitForNotifications(1.0):
                 # handleNotification() was called
-                print ("notify, value is :", ch.read())
                 continue
         print("Waiting...")
         
