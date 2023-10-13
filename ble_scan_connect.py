@@ -16,7 +16,7 @@ class MyDelegate(DefaultDelegate):
         DefaultDelegate.__init__(self)
 
     def handleNotification(self, cHandle, data):
-        print ("Notification received: handle =", cHandle, "; Raw data =", binascii.b2a_hex(data))
+        print ("Notification received: handle =", cHandle, "; Raw data =", data)
 
 
 scanner = Scanner().withDelegate(ScanDelegate())
