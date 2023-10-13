@@ -79,21 +79,16 @@ try:
         # print (writeCharacteristic)
     cccd_handle = ch.getHandle() + 1 
     print (hex(cccd_handle))
-    k = dev.writeCharacteristic(cccd_handle, b"\x00\x00")
+    k = dev.writeCharacteristic(cccd_handle, b"\x01\x00")
     print(ch.propertiesToString())
     print(k)
 
-    ch = testService.getDescriptors()
-    print (len(ch))
-    for k in ch:
-        print(k)
+    # ch = testService.getDescriptors()
+    # print (len(ch))
+    # for k in ch:
+    #     print(k)
 
-    
-    
-
-    
-        
-        
+       
         
 
 #
