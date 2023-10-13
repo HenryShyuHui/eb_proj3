@@ -10,7 +10,7 @@ class ScanDelegate(DefaultDelegate):
         elif isNewData:
             print ("Received new data from", dev.addr)
             
-//different module
+# different module
 class MyDelegate(btle.DefaultDelegate):
     def __init__(self):
         btle.DefaultDelegate.__init__(self)
