@@ -87,7 +87,7 @@ try:
     #     print(k)
 
     while True:
-        if peripheral.waitForNotifications(1.0):
+        if dev.waitForNotifications(1.0):
             # handleNotification() was called
             print ("notify")
             continue
