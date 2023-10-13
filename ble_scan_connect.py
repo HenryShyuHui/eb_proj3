@@ -55,8 +55,6 @@ try:
 
     ch = dev.getCharacteristics(uuid=UUID(0xfff3))[0]
     
-    cccd = ch.valHandle + 1
-    cccd.write("\x01\x00")
     
     print(ch.propertiesToString())
     if (ch.supportsRead()):
@@ -88,7 +86,12 @@ try:
     # for k in ch:
     #     print(k)
 
-       
+    while True:
+        if peripheral.waitForNotifications(1.0):
+            # handleNotification() was called
+            print ("notify")
+            continue
+        print("Waiting...")
         
 
 #
