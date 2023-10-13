@@ -54,6 +54,10 @@ try:
         
 
     ch = dev.getCharacteristics(uuid=UUID(0xfff3))[0]
+    
+    cccd = ch.valHandle + 1
+    cccd.write("\x01\x00")
+    
     print(ch.propertiesToString())
     if (ch.supportsRead()):
         print (ch.read())
