@@ -89,7 +89,7 @@ try:
     while True:
         if dev.waitForNotifications(1.0):
             # handleNotification() was called
-            print ("notify, value is :")
+            print ("notify, value is :", ch.read())
             continue
         print("Waiting...")
         
